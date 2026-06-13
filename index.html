@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>vanlipa</title>
-  <meta name="description" content="vanlipa focuses on AI-assisted information analysis." />
+  <meta name="description" content="Notes on AI, forecasting, and where the residual risk in business applications actually sits." />
   <link rel="icon" href="./favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
@@ -15,61 +15,73 @@
     <div class="wrap nav">
       <a class="brand" href="./index.html" aria-label="vanlipa home">VANLIPA</a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#background">Background</a>
-        <a href="#contact">Contact</a>
+        <a href="./imprint.html">Imprint</a>
+        <a href="./privacy.html">Privacy</a>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <section class="hero" aria-labelledby="hero-title">
-      <p class="eyebrow">AI-assisted information analysis</p>
-      <h1 id="hero-title">Focused analysis for complex information environments.</h1>
-      <p class="lead">
-        vanlipa works on structured, AI-assisted information analysis: reducing noise, identifying relevant signals,
-        and turning fragmented information into clearer judgment.
-      </p>
-      <p class="muted">
-        The emphasis is practical rather than promotional — disciplined analysis workflows, careful handling of ambiguity,
-        and useful outputs for real-world decision contexts.
-      </p>
-      <div class="meta">
-        <span>Contact:</span>
-        <a href="mailto:ipv@vanlipa.com">ipv@vanlipa.com</a>
+    <article class="essay">
+      <header class="essay-header">
+        <p class="eyebrow">Forecasting · AI-assisted analysis</p>
+        <h1>Two questions about AI in business</h1>
+      </header>
+
+      <div class="prose">
+        <p>Why do people use AI almost every day, feel that it enriches their life and helps them think more clearly, make better decisions, work faster, and at the same time feel uneasy about introducing AI applications in a company that handle business data or interact directly with customers? The concerns may touch on security, on the customer journey, or on business impact. They are often diffuse and hard to put into words.</p>
+
+        <p>The interesting question is not whether this unease is justified. The interesting question is where it comes from. Why can a positive private experience not simply be transferred to business processes?</p>
+
+        <p>The answer is not in the technology. It lies in the structure of the task to which AI is applied, and in a set of characteristics that both the AI and the human bring into every interaction. Anyone who understands these characteristics can locate the unease precisely. They can tell where it is justified and where it is not. They can see where the line runs between a private application that enriches and a business application that becomes a risk.</p>
+
+        <p>These characteristics are not a detail for developers or security officers. They concern everyone who uses AI. They concern the private user planning a trip. They concern the risk owner evaluating a new tool. They concern the developer designing an application. What differs is the impact, not what is actually happening.</p>
+
+        <p>What makes the unease difficult to articulate is that it feels new. AI is a recent technology. The applications are recent. The risks seem recent. But the dynamics underneath are not. They were described long before AI existed, in different contexts, by people who had no idea that their observations would one day apply to a chatbot or an agentic workflow.</p>
+
+        <p>Reading Taleb, Kahneman, and Tetlock over the years, I kept coming back to the same observation, and over the last two years I have been putting it into practice in my own forecasting and AI-assisted analysis work. Taleb showed how easily traders mistook luck for skill, and how rarely the cost of that mistake was visible until it became ruinous. Kahneman described, with disconcerting precision, the way the mind quietly substitutes what sounds true for what is true. Tetlock asked a different question again: why confident forecasts so often fail, and what kinds of thinking actually predict well under uncertainty. None of them wrote about AI. But the more I worked with AI in practice, the clearer it became that they had already described, in other settings, exactly the situation a modern user finds themselves in: faced with an output that sounds competent, in a context where checking it carefully feels like a waste of time, with no obvious signal for when checking is really crucial.</p>
+
+        <p>Imagine a family arriving at the airport for a long-planned holiday. They had asked an AI assistant in advance whether they would need a visa for their destination. The answer was confident, detailed, and wrong. At check-in, they are turned back. The flight is gone, the booking is non-refundable, the trip is over before it began. Nothing about the earlier conversation hinted that this would be the one answer that mattered, and the one that the AI got wrong.</p>
+
+        <p>Once you can name what is actually happening, the unease stops being diffuse. It becomes a set of specific questions that can be asked, answered, and built into the design of any AI interaction. Two of those questions, in my own work, have turned out to matter more than the rest. They are the questions I want to spend the rest of this text on, because they are where the standard discussion about AI risk stops being useful and the real work begins.</p>
+
+        <h2>The first question is about interpretation level.</h2>
+
+        <p>The pattern is consistent across every domain where I have seen this play out. Adding interpretation layers to an AI system almost never improves the result. It hides the failure mode rather than fixing it.</p>
+
+        <p>The temptation is always the same. The system works well in most cases, but there is a residual five percent at the edges where it stumbles. The intuitive response is to add another layer — a synthesis step, a correction model, a meta-reasoner — to catch what the base system misses. What I have come to believe, after building and dismantling architectures in my own work and after watching the same pattern in other people's systems, is that this move almost always makes things worse. The additional layer does not catch the five percent. It produces more confident-sounding synthesis on top of the same underlying evidence, and the additional confidence is indistinguishable from genuine improvement until something resolves and the failure becomes visible.</p>
+
+        <p>This is not a property of any particular domain, and the available evidence suggests it is not a property that better models alone can fix. IBM's Watson for Oncology was designed to give doctors concrete cancer treatment recommendations — the highest possible level of interpretation in medical AI. Internal documents later revealed that it recommended unsafe and incorrect treatments, and MD Anderson cancelled the project after spending sixty-two million dollars. That case is from around 2016. Watson's technology has long been surpassed, several times over. And yet Cisco, testing in 2026 with state-of-the-art language models, hit the same structural failure in an entirely different field. Their Talos incident response team tested whether a language model could draft security reports. With narrow, single-task instructions covering small sections of a document, drafting time fell by half and blind quality reviews came back positive. When the same model was asked to operate at a higher interpretation level — editing a complete report for grammar, generating recommendations across the document, maintaining consistency across multiple reports in a session — it hallucinated errors that did not exist, missed real ones, produced duplicative recommendations, and contaminated content from one report into the next. According to Cisco's own account, the team tested before shipping, found the boundary, and stopped.</p>
+
+        <p>Two cases, two domains, a decade apart, the same mechanism. And in my own forecasting work, the pattern has shown up again, with the same shape and the same lesson. Whether future models will dissolve the problem is an open question. What is clear is that ten years and several generations of model progress have not done so.</p>
+
+        <p>The principle that follows is easy to state and hard to apply. There is a level of interpretation at which a given AI system genuinely solves the task it has been set. Above that level, every additional layer degrades the result. Below it, the system fails to deliver value. The optimum sits somewhere between these two, and the work of finding it is not technical. It is conceptual.</p>
+
+        <p>Locating that threshold requires asking what the task actually consists of, what part of it the AI can carry, and where the point lies at which any further synthesis stops adding signal and starts adding only confidence. In the cases I have looked at, this is where the design decision is most often quietly made wrong. Not because the engineers lack skill, but because the question is rarely asked in this form. Teams reach instinctively for more capability, more reasoning, more layers — and the system grows past the optimum without anyone noticing, because more usually feels safer than less.</p>
+
+        <p>What remains after the right level has been found is residual risk. Once it is named, it can be contained deterministically: with a check, an approval, a hard limit, a refusal to act. What cannot be contained deterministically has to be accepted explicitly, or the design has to be rethought. The discipline is not in saying no to AI. It is in seeing the threshold clearly enough to know what belongs above it and what belongs below.</p>
+
+        <h2>The second question is about residual risk, and it is the more important of the two.</h2>
+
+        <p>The standard framing in the AI risk debate is that AI introduces probability into processes that used to be deterministic, and that the answer is to wrap probabilistic components in deterministic controls. This framing is not wrong, but it is shallow. It treats <em>deterministic</em> and <em>probabilistic</em> as categories of process, when in fact almost no business process is truly deterministic. Credit checks, identity verification, contract approval, expense reimbursement, even password resets in their classical form — these are all probabilistic processes. SMS codes can be intercepted. SIMs can be swapped. Signatures can be forged. What made these processes acceptable was never their determinism. It was the fact that their residual risk had been compressed below an implicit threshold the organisation had, consciously or not, agreed to live with.</p>
+
+        <p>This changes the question. The introduction of AI into a business process is almost never a categorical shift from deterministic to probabilistic. It is a shift in residual risk on a spectrum that was always probabilistic. The honest question is not whether AI is appropriate for the task in some abstract sense. It is: how does the residual risk of the AI-supported process compare to the residual risk of the process it replaces, and is the difference one the organisation has explicitly chosen to accept?</p>
+
+        <p>Earlier this year, Meta rolled out an AI-assisted account recovery system for Instagram, called High Touch Support. The logic was familiar on the surface: reduce support costs, resolve issues faster, scale globally. But account recovery was never a deterministic process. It had simply sat below a tolerable risk threshold for years. Attackers worked out a remarkably simple technique. Using a VPN to match the target's geographic region, they asked the chatbot to link the target account to an email address under their control. According to Meta's own account, the AI tool itself behaved as intended — the actual failure was in a separate code path that did not properly verify that the email address provided matched the one on file. More than twenty thousand accounts were taken over before the flow was disabled, including the Obama-era White House handle, the personal account of a senior US Space Force official, and the account of a security researcher and former Meta employee. Whether the proximate cause is described as a bug or as a design decision, the structural point holds. The mistake was not that Meta introduced probability where there had been none. The mistake appears to have been a shift in residual risk — a shift that, judging by the outcome, was not adequately contained before deployment. What is visible from the outside is that the controls that would have caught such a shift were not in place by the time attackers reached the system. By the time the issue surfaced publicly, it was no longer a design question. It was a security incident.</p>
+
+        <p>This is the deeper lesson hidden behind the usual debate. The interesting question for any AI application — private or professional — is not whether the technology is reliable enough in the abstract. It is whether the residual risk of the AI-supported version sits where the organisation, or the user, can knowingly accept it. The failures in business AI that draw public attention today are, in my reading of them, rarely failures of the technology. They are more often failures of this question being asked too late, or not at all.</p>
+
+        <p>Used together, these two questions — what interpretation level is right for this task, and where does the residual risk sit compared to the process it replaces — turn the design of an AI application from a matter of intuition or vendor promises into something a senior engineer, a risk owner, and an auditor can all read in the same way. They make visible where AI multiplies value and where it multiplies risk. They identify the points in a workflow where a deterministic check, a human approval, or a structural limit needs to sit. And they show where, by contrast, AI can be given wide latitude, because the cost of being wrong is small, the output is easy to verify, and the gain in speed and reach is real.</p>
+
+        <p>Applications built this way do more than avoid the obvious risks. They multiply what the AI does best across exactly the parts of a process where it adds real value, and leave the parts that depend on judgement, accountability, or hard rules in the hands they belong in.</p>
+
+        <p>If any of this resonates with how you have been thinking about AI in your own work, I would be glad to talk.</p>
       </div>
-    </section>
 
-    <div class="sections">
-      <section id="about" class="section" aria-labelledby="about-title">
-        <h2 id="about-title">About</h2>
-        <p>
-          vanlipa focuses on how AI can improve information analysis without replacing rigor. The goal is not generic automation,
-          but better structure, better signal extraction, and better reasoning under uncertainty.
-        </p>
-        <p>
-          This includes working with complex, incomplete, or fast-moving information and translating it into concise,
-          decision-relevant outputs.
-        </p>
-      </section>
-
-      <section id="background" class="section" aria-labelledby="background-title">
-        <h2 id="background-title">Background</h2>
-        <p>
-          The background behind vanlipa combines experience in IT security, consulting, and technical implementation with
-          a strong focus on structured analytical work.
-        </p>
-        <p>
-          The underlying approach is straightforward: use modern AI where it genuinely adds value, and keep the surrounding
-          process clear, controlled, and useful.
-        </p>
-      </section>
-    </div>
-
-    <section id="contact" class="section" aria-labelledby="contact-title" style="margin-top: 14px;">
-      <h2 id="contact-title">Contact</h2>
-      <p>For inquiries, please contact <a href="mailto:ipv@vanlipa.com">ipv@vanlipa.com</a>.</p>
-    </section>
+      <footer class="essay-end">
+        <p class="meta">Contact <a href="mailto:ipv@vanlipa.com">ipv@vanlipa.com</a></p>
+      </footer>
+    </article>
   </main>
 
   <footer>
