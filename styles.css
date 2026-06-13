@@ -126,13 +126,18 @@ p, li {
   font-size: 1.125rem;
   line-height: 1.6;
   color: #3d3d3d;
-  margin: 0 0 32px;
+  margin: 0 0 18px;
+}
+
+.essay-intro:last-of-type {
+  margin-bottom: 32px;
   padding-bottom: 26px;
   border-bottom: 1px solid var(--line);
 }
 
-.essay-intro:last-child {
-  margin-bottom: 0;
+.essay-intro-note {
+  color: var(--muted);
+  font-size: 1.0625rem;
 }
 
 .prose {
@@ -254,8 +259,15 @@ footer {
 
   .essay-intro {
     font-size: 1.2rem;
+  }
+
+  .essay-intro:last-of-type {
     margin-bottom: 40px;
     padding-bottom: 32px;
+  }
+
+  .essay-intro-note {
+    font-size: 1.0625rem;
   }
 
   .prose {
