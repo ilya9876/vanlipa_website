@@ -122,6 +122,17 @@ p, li {
   margin: 6px 0 22px;
 }
 
+.essay-date {
+  margin: 14px 0 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.essay-date time {
+  font-style: normal;
+}
+
 .essay-intro {
   font-size: 1.125rem;
   line-height: 1.6;
